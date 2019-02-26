@@ -1,0 +1,2 @@
+const components = [];
+const controllers = [];

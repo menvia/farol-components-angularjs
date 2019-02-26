@@ -1,0 +1,14 @@
+{
+  "name": "angular-farol-components",
+  "homepage": "https://github.com/menvia/farol-components-angularjs",
+  "authors": ["Menvia Developer <developer@menvia.com> (https://menvia.com)"],
+  "description": "Farol Components for AngularJS",
+  "main": "dist/angular-farol-components.js",
+  "keywords": ["farol", "farol-sdk", "menvia", "eventelis"],
+  "license": "ISC",
+  "ignore": ["**/.*", "node_modules", "bower_components"],
+  "dependencies": {
+    "angular": "^1.7.7",
+    "farol-sdk": "^1.14.2"
+  }
+}

@@ -1,0 +1,3 @@
+- file: README.md
+  search: 'bower install angular-farol-components(\#.+\ )-S -F'
+  replacement: "bower install angular-farol-components#<@VERSION@> -S -F"

@@ -1,0 +1,8 @@
+src/*
+bower_components/*
+.eslintignore
+.eslintrc.json
+.npmrc
+bower.json
+gulpfile.js
+upver.yml

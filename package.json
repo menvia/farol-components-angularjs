@@ -1,0 +1,47 @@
+{
+  "name": "angular-farol-components",
+  "version": "0.0.0",
+  "description": "Farol Components for AngularJS",
+  "main": "dist/angular-farol-components.js",
+  "scripts": {
+    "version": "upver && gulp && git add -A",
+    "postversion": "npm publish --access public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menvia/farol-components-angularjs.git"
+  },
+  "keywords": [
+    "farol",
+    "farol-sdk",
+    "menvia",
+    "eventelis"
+  ],
+  "author": "Menvia Developer <developer@menvia.com> (https://menvia.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/menvia/farol-components-angularjs/issues"
+  },
+  "homepage": "https://github.com/menvia/farol-components-angularjs#readme",
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-transform-strict-mode": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.14.1",
+    "eslint-config-google": "^0.12.0",
+    "eslint-watch": "^4.0.2",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.1",
+    "mocha": "^6.0.0",
+    "pump": "^3.0.0",
+    "upver": "^1.0.0"
+  },
+  "dependencies": {
+    "angular": "^1.7.7",
+    "farol-sdk": "^1.14.2"
+  }
+}
