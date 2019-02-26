@@ -1,12 +1,15 @@
 {
   "name": "angular-farol-components",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Farol Components for AngularJS",
   "main": "dist/angular-farol-components.js",
   "scripts": {
     "version": "upver && gulp && git add -A",
     "postversion": "npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "config": {
+    "upver": "upver.yml"
   },
   "repository": {
     "type": "git",
