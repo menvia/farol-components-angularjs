@@ -61,8 +61,9 @@ directives.push({
           };
           // If no authorization is defined than try to download using the
           // public download method
+          const fileSDK = new FarolSDK.Admin.File();
           if (FarolSDK.authorization) {
-            FarolSDK.Admin.File.download(
+            fileSDK.download(
                 params[0],
                 params[1],
                 params[2],
@@ -70,7 +71,7 @@ directives.push({
                 handler
             );
           } else {
-            FarolSDK.Admin.File.publicDownload(
+            fileSDK.publicDownload(
                 params[0],
                 params[1],
                 downloadParams,

@@ -5,7 +5,7 @@
 ### Using Bower
 
 - To install or update run ```
-  bower install angular-farol-components#1.0.1 -S -F
+  bower install angular-farol-components#1.0.2 -S -F
 
 ````
 

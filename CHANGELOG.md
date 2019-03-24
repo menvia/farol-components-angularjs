@@ -1,3 +1,12 @@
+## 1.0.2 / 2019.03.24
+
+##### Dependency
+
+- Update [angularjs 1.7.8](https://github.com/angular/angular.js/blob/master/CHANGELOG.md) 🚀
+- Update to Bower [farol-sdk 1.14.3](https://bitbucket.org/menvia/farol-sdk-javascript/src/master/CHANGELOG.md) 🚀
+- Update to NPM [babel 7.4.2](https://github.com/babel/babel/releases) 🚀
+- Update to NPM [eslint 5.15.3](https://github.com/eslint/eslint/blob/master/CHANGELOG.md) 🚀
+
 ## 1.0.1 / 2019.03.10
 
 #### Enhancement
