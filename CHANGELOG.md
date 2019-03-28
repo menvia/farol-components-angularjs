@@ -1,3 +1,13 @@
+## 1.0.3 / 2019.03.28
+
+#### Enhancement
+
+- Add instant reload to frl-avatar compoenent ⚡️
+
+##### Dependency
+
+- Update to Bower [farol-sdk 1.15.7](https://bitbucket.org/menvia/farol-sdk-javascript/src/master/CHANGELOG.md) 🚀
+
 ## 1.0.2 / 2019.03.24
 
 ##### Dependency
