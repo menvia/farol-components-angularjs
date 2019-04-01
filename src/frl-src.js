@@ -1,11 +1,6 @@
-directives.push({
-  name: 'frlSrc',
-  /**
-   * @param {Object} FarolSDK Service
-   * @return {Object} Directive object
-   * @ngInject
-   * */
-  method: (FarolSDK) => {
+(function() {
+  'use strict';
+  angular.module('FarolComponents').directive('frlSrc', (FarolSDK) => {
     return {
       link: (scope, element, attrs) => {
         // Check if frlSrc attribute is an array and if not convert it
@@ -87,5 +82,5 @@ directives.push({
       },
       restrict: 'A',
     };
-  },
-});
+  });
+})();

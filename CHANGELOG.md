@@ -1,3 +1,9 @@
+## 1.0.4 / 2019.04.01
+
+#### Enhancement
+
+- Enhance code definition 🧹
+
 ## 1.0.3 / 2019.03.28
 
 #### Enhancement

@@ -18,13 +18,8 @@
   }
 })(this, function(angular) {
   'use strict';
-  // create your angular module and do stuff
+  // create your angular module
   const moduleName = 'FarolComponents';
-  const mod = angular.module(moduleName, []);
-
-  directives.forEach((item) => mod.directive(item.name, item.method));
-  components.forEach((item) => mod.component(item.name, item.settings));
-  controllers.forEach((item) => mod.controller(item.name, item.method));
-
+  angular.module(moduleName, []);
   return moduleName;
 });

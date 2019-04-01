@@ -9,11 +9,10 @@ const uglifyEs = require('gulp-uglify-es');
 const job = function(cb, debug) {
   const pumpSteps = [
     gulp.src([
-      'src/components.js',
+      'src/index.js',
+      'src/frl-src.js',
       'src/frl-avatar/frl-avatar.js',
       'src/frl-project-icon/frl-project-icon.js',
-      'src/frl-src.js',
-      'src/index.js',
     ]),
     fileInclude({
       prefix: '@@',
