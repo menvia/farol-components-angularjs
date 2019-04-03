@@ -3,17 +3,13 @@ const concat = require('gulp-concat');
 const fileInclude = require('gulp-file-include');
 const gulp = require('gulp');
 const ngAnnotate = require('gulp-ng-annotate');
+const path = require('gulp');
 const pump = require('pump');
 const uglifyEs = require('gulp-uglify-es');
 
 const job = function(cb, debug) {
   const pumpSteps = [
-    gulp.src([
-      'src/index.js',
-      'src/frl-src.js',
-      'src/frl-avatar/frl-avatar.js',
-      'src/frl-project-icon/frl-project-icon.js',
-    ]),
+    gulp.src(['src/index.js', 'src/frl-src.js', 'src/**/*.js']),
     fileInclude({
       prefix: '@@',
       basepath: '@file',

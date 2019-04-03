@@ -1,0 +1,78 @@
+<div
+  ng-if="vmcpt.finishedLoading"
+  ng-hide="vmcpt.hidden"
+  ng-form="vmcpt.textTime"
+>
+  <h3 translate="{{ vmcpt.fieldName }}"></h3>
+  <div ng-if="vmcpt.hasDate" layout="row">
+    <md-input-container class="md-block" flex>
+      <input
+        ng-model="vmcpt.year"
+        type="number"
+        ng-step="1"
+        ng-pattern="9999"
+        ng-required="vmcpt.required"
+        ng-readonly="vmcpt.readonly"
+      />
+    </md-input-container>
+    <md-input-container class="md-block" flex>
+      <select
+        ng-model="vmcpt.month"
+        ng-required="vmcpt.required"
+        ng-readonly="vmcpt.readonly"
+      >
+        <option value="00">{{ 'JANUARY' | translate }}</option>
+        <option value="01">{{ 'FEBRUARY' | translate }}</option>
+        <option value="02">{{ 'MARCH' | translate }}</option>
+        <option value="03">{{ 'APRIL' | translate }}</option>
+        <option value="04">{{ 'MAY' | translate }}</option>
+        <option value="05">{{ 'JUNE' | translate }}</option>
+        <option value="06">{{ 'JULY' | translate }}</option>
+        <option value="07">{{ 'AUGUST' | translate }}</option>
+        <option value="08">{{ 'SEPTEMBER' | translate }}</option>
+        <option value="09">{{ 'OCTOBER' | translate }}</option>
+        <option value="10">{{ 'NOVEMBER' | translate }}</option>
+        <option value="11">{{ 'DECEMBER' | translate }}</option>
+      </select>
+    </md-input-container>
+    <md-input-container class="md-block" flex>
+      <input
+        ng-model="vmcpt.day"
+        type="number"
+        ng-step="1"
+        ng-pattern="99"
+        ng-min="1"
+        ng-max="31"
+        ng-required="vmcpt.required"
+        ng-readonly="vmcpt.readonly"
+      />
+    </md-input-container>
+  </div>
+  <div ng-if="vmcpt.hasTime" layout="row">
+    <md-input-container class="md-block" flex>
+      <input
+        ng-model="vmcpt.hour"
+        type="number"
+        ng-step="1"
+        ng-pattern="99"
+        ng-required="vmcpt.required"
+        ng-readonly="vmcpt.readonly"
+        ng-min="00"
+        ng-max="23"
+      />
+    </md-input-container>
+    <md-input-container class="md-block" flex>
+      <input
+        ng-model="vmcpt.minute"
+        type="number"
+        ng-step="1"
+        ng-pattern="99"
+        ng-min="0"
+        ng-max="59"
+        ng-required="vmcpt.required"
+        ng-readonly="vmcpt.readonly"
+      />
+    </md-input-container>
+  </div>
+  <div ng-if="vmcpt.hint" translate="{{ vmcpt.hint }}"></div>
+</div>
