@@ -63,7 +63,7 @@ In order to release a new version you shall follow the steps bellow:
   npm version patch
   FAROL_SDK_VERSION=$(npx -c 'echo "$npm_package_version"')
   git commit -am"${FAROL_SDK_VERSION}"
-git tag ${FAROL_SDK_VERSION}
+  git tag ${FAROL_SDK_VERSION}
   git push && git push --tags
 
 ```
