@@ -1,6 +1,6 @@
 {
   "name": "angular-farol-components",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Farol Components for AngularJS",
   "main": [
     "dist/angular-farol-components.js",

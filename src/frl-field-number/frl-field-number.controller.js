@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-      .module('app.farol')
+      .module('FarolComponents')
       .controller('FrlFieldNumberController', FrlFieldNumberController);
 
   /**
