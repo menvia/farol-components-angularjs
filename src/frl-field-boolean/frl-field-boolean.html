@@ -1,0 +1,16 @@
+<div
+  id="frl-field-boolean"
+  ng-if="vmdr.finishedLoading"
+  ng-hide="vmdr.hidden"
+  ng-form="vmdr.booleanField"
+>
+  <md-content>
+      <md-switch
+        aria-label="{{ vmdr.fieldName | translate }}"
+        ng-model="vmdr.model"
+        ng-readonly="vmdr.readonly"
+        md-invert
+        >{{ vmdr.fieldName | translate }}</md-switch
+      >
+  </md-content>
+</div>

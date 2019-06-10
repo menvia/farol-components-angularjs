@@ -1,0 +1,31 @@
+<div class="frl-field-router">
+  <div
+    ng-if="vmcpt.loaded"
+    ng-switch="vmcpt.component"
+    class="md-block"
+    flex>
+    @@include('components/boolean.html')
+    @@include('components/chips.html')
+    @@include('components/datarower.html')
+    @@include('components/datatabber.html')
+    @@include('components/definitionrower.html')
+    @@include('components/definitiontabber.html')
+    @@include('components/displaytext.html')
+    @@include('components/dynamicobject.html')
+    @@include('components/email.html')
+    @@include('components/file.html')
+    @@include('components/limit.html')
+    @@include('components/link.html')
+    @@include('components/number.html')
+    @@include('components/select.html')
+    @@include('components/table.html')
+    @@include('components/text.html')
+    @@include('components/textarea.html')
+  </div>
+  <div ng-if="vmcpt.loaded === undefined" class="loading-animation">
+    {{ 'LOADING' | translate }}
+  </div>
+  <div ng-if="vmcpt.loaded === false" class="load-failled">
+    {{ 'LOADINGFAILLED' | translate }}
+  </div>
+</div>

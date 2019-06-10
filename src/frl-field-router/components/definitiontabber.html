@@ -1,0 +1,29 @@
+<frl-definition-tabber
+  ng-switch-when="definitiontabber"
+  frl-base-model="vmcpt.baseModel"
+  frl-model="vmcpt.model"
+  frl-model-path="{{ vmcpt.modelPath }}"
+  frl-fieldname="{{
+    vmcpt.definitions.fieldname.modelObject[
+      vmcpt.definitions.fieldname.modelAttribute
+    ]
+  }}"
+  frl-children="vmcpt.definitions.children.modelObject[vmcpt.definitions.children.modelAttribute]"
+  frl-childrendefinitions="vmcpt.definitions.childrendefinitions.modelObject[vmcpt.definitions.childrendefinitions.modelAttribute]"
+  frl-hint="{{
+    vmcpt.definitions.hint.modelObject[vmcpt.definitions.hint.modelAttribute]
+  }}"
+  frl-readonly="vmcpt.definitions.readonly.modelObject[vmcpt.definitions.readonly.modelAttribute]"
+  frl-required="vmcpt.definitions.required.modelObject[vmcpt.definitions.required.modelAttribute]"
+  frl-modelfilterfield="{{
+    vmcpt.definitions.modelfilterfield.modelObject[
+      vmcpt.definitions.modelfilterfield.modelAttribute
+    ]
+  }}"
+  frl-itemnamefield="{{
+    vmcpt.definitions.itemnamefield.modelObject[
+      vmcpt.definitions.itemnamefield.modelAttribute
+    ]
+  }}"
+>
+</frl-definition-tabber>

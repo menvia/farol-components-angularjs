@@ -1,0 +1,47 @@
+<div ng-switch="vmcpt.loaded" class="frl-data-tabber md-padding">
+  <div
+    ng-class="{wraparound: vmcpt.wrapAround}"
+    ng-form="vmcpt.dataTabberForm"
+    ng-switch-when="true"
+  >
+    <div class="md-title" ng-if="vmcpt.fieldName">
+      {{ vmcpt.fieldName | translate }}
+    </div>
+    <div class="hint" ng-if="vmdr.hint" translate="{{ vmdr.hint }}"></div>
+    <table md-padding>
+      <thead>
+        <tr>
+          <th ng-if="vmcpt.lineNameField">&nbsp;</th>
+          <th
+            style="text-align: center; vertical-align: middle; padding: 15px;"
+            ng-repeat="column in vmcpt.columns | filter: vmcpt.columnFilter | orderBy: vmcpt.columnOrderField track by column._id"
+          >
+            {{ vmcpt.getColumnName(column)}}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="line in vmcpt.model">
+          <td
+            style="text-align: center; vertical-align: middle; padding: 15px; font-weight: 700"
+            ng-if="vmcpt.lineNameField"
+          >
+            {{ vmcpt.getLineName(line) }}
+          </td>
+          <td
+            style="text-align: center; vertical-align: middle; padding: 15px;"
+            ng-repeat="column in vmcpt.columns | filter: vmcpt.columnFilter | orderBy: vmcpt.columnOrderField track by column._id"
+          >
+            {{ vmcpt.getCellData(column, line) }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div ng-switch-when="undefined" class="loading-animation">
+    {{ 'LOADING' | translate }}
+  </div>
+  <div ng-switch-when="false" class="load-failled">
+    {{ 'LOADINGFAILLED' | translate }}
+  </div>
+</div>

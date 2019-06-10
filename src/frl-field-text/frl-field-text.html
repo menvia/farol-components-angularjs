@@ -1,0 +1,35 @@
+<div id="frl-field-text" ng-if="vmcpt.finishedLoading" ng-hide="vmcpt.hidden" ng-form="vmcpt.textField">
+  <md-input-container class="md-block" flex>
+    <h3 ng-if="vmcpt.nonMaterialView" translate="{{vmcpt.fieldName}}"></h3>
+    <label ng-if="!vmcpt.nonMaterialView" translate="{{vmcpt.fieldName}}"></label>
+    <input
+      type="text"
+      ng-readonly="vmcpt.readonly"
+      ng-required="vmcpt.required"
+      ng-minlength="vmcpt.minLength"
+      ng-maxlength="vmcpt.maxLength"
+      ui-mask="{{vmcpt.mask}}"
+      ui-options="(vmcpt.mask)?{addDefaultPlaceholder:false}:{}"
+      model-view-value="(vmcpt.mask)?true:false"
+      ng-pattern="vmcpt.pattern"
+      ng-model="vmcpt.model"
+      name="input"
+      aria-label="{{ vmcpt.fieldName | translate }}">
+    <div class="hint" ng-if="(vmcpt.textField.input.$valid || vmcpt.textField.input.$pristine) && vmcpt.hint"
+      translate="{{vmcpt.hint}}"></div>
+    <div ng-messages="vmcpt.textField.input.$error" role="alert" multiple>
+      <div ng-message="required">
+        <span translate="FIELD_REQUIRED"></span>
+      </div>
+      <div ng-message="minlength">
+        <span>{{'MIN_LENGTH_IS' | translate:{value:vmcpt.minLength}}}</span>
+      </div>
+      <div ng-message="maxlength">
+        <span>{{'MAX_LENGTH_IS' | translate:{value:vmcpt.maxLength}}}</span>
+      </div>
+      <div ng-message="pattern">
+          <span>{{('DOES_NOT_MATCH_PATTERN' | translate ) + ' ' + vmcpt.patternDescription}}</span>
+      </div>
+    </div>
+  </md-input-container>
+</div>

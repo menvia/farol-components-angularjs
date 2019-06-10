@@ -1,0 +1,39 @@
+<frl-field-file
+  ng-switch-when="file"
+  frl-fieldname="{{
+    vmcpt.definitions.fieldname.modelObject[
+      vmcpt.definitions.fieldname.modelAttribute
+    ]
+  }}"
+  frl-model="vmcpt.model"
+  frl-readonly="vmcpt.definitions.readonly.modelObject[vmcpt.definitions.readonly.modelAttribute]"
+  frl-required="vmcpt.definitions.required.modelObject[vmcpt.definitions.required.modelAttribute]"
+  frl-hint="{{
+    vmcpt.definitions.hint.modelObject[vmcpt.definitions.hint.modelAttribute]
+  }}"
+  frl-hidden="vmcpt.definitions.hidden.modelObject[vmcpt.definitions.hidden.modelAttribute]"
+  frl-extension="{{
+    vmcpt.definitions.extension.modelObject[
+      vmcpt.definitions.extension.modelAttribute
+    ]
+  }}"
+  frl-maxlength="{{
+    vmcpt.definitions.maxlength.modelObject[
+      vmcpt.definitions.maxlength.modelAttribute
+    ]
+  }}"
+  frl-is-image="
+          vmcpt.definitions.isimage.modelObject[
+            vmcpt.definitions.isimage.modelAttribute
+          ]
+        "
+  frl-is-public="
+          vmcpt.definitions.ispublic.modelObject[
+            vmcpt.definitions.ispublic.modelAttribute
+          ]
+        "
+  frl-entityid="evt_paper"
+  frl-entityitemid="{{ vmcpt.baseModel._id }}"
+  frl-filename="{{ vmcpt.fieldModelName }}"
+>
+</frl-field-file>

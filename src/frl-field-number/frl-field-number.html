@@ -1,0 +1,67 @@
+<div
+  ng-if="vmcpt.finishedLoading"
+  ng-hide="vmcpt.hidden"
+  ng-form="vmcpt.numberField"
+>
+  <md-input-container class="md-block" flex>
+    <h3 ng-if="vmcpt.nonMaterialView" translate="{{ vmcpt.fieldName }}"></h3>
+    <label
+      ng-if="!vmcpt.nonMaterialView"
+      translate="{{ vmcpt.fieldName }}"
+    ></label>
+    <input
+      type="number"
+      ng-readonly="{{ vmcpt.readonly }}"
+      ng-required="{{ vmcpt.required }}"
+      minlength="{{ parseInt(vmcpt.minLength) }}"
+      maxlength="{{ parseInt(vmcpt.maxLength) }}"
+      min="{{ vmcpt.minValue }}"
+      max="{{ vmcpt.maxValue }}"
+      step="{{ vmcpt.valueStep }}"
+      ng-pattern="vmcpt.pattern"
+      ng-model="vmcpt.model"
+      name="input"
+    />
+    <div
+      class="hint"
+      ng-if="(vmcpt.numberField.input.$valid || vmcpt.numberField.input.$pristine) && vmcpt.hint"
+      translate="{{ vmcpt.hint }}"
+    ></div>
+    <div ng-messages="vmcpt.numberField.input.$error" role="alert" multiple>
+      <div ng-message="required">
+        <span translate="FIELD_REQUIRED"></span>
+      </div>
+      <div ng-message="minlength">
+        <span>{{
+          'MIN_LENGTH_IS' | translate: { value: vmcpt.minLength }
+        }}</span>
+      </div>
+      <div ng-message="maxlength">
+        <span>{{
+          'MAX_LENGTH_IS' | translate: { value: vmcpt.maxLength }
+        }}</span>
+      </div>
+      <div ng-message="min">
+        <span>{{ 'MIN_VALUE_IS' | translate: { value: vmcpt.minValue } }}</span>
+      </div>
+      <div ng-message="max">
+        <span>{{ 'MAX_VALUE_IS' | translate: { value: vmcpt.maxValue } }}</span>
+      </div>
+      <div ng-message="step">
+        <span
+          >{{'EXPECTEDVALUESTEPFORMATIS' | translate:{value:vmcpt.step}}}</span
+        >
+      </div>
+      <div ng-message="pattern">
+        <span>{{
+          ('DOES_NOT_MATCH_PATTERN' | translate) +
+            ' ' +
+            vmcpt.patternDescription
+        }}</span>
+      </div>
+    </div>
+    <md-icon md-font-icon="icon-help-circle" ng-if="vmcpt.help">
+      <md-tooltip ng-bind-html="vmcpt.help"></md-tooltip>
+    </md-icon>
+  </md-input-container>
+</div>

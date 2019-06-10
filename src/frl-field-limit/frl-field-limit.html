@@ -1,0 +1,41 @@
+<div
+  ng-if="vmcpt.finishedLoading"
+  ng-hide="vmcpt.hidden"
+  ng-form="vmcpt.limitField"
+>
+  <md-input-container class="md-block" flex>
+    <md-switch
+      ng-model="vmcpt.limited"
+      ng-readonly="vmcpt.readonly"
+      aria-label="SWITCH"
+      ng-change="vmcpt.updateModel()"
+    >
+      {{ vmcpt.fieldName | translate }}
+    </md-switch>
+  </md-input-container>
+  <md-input-container class="md-block" ng-if="vmcpt.limited">
+    <label translate="QUANTITY">Quantity</label>
+    <input
+      type="number"
+      ng-model="vmcpt.limit"
+      ng-min="vmcpt.minValue"
+      ng-max="vmcpt.maxValue"
+      ng-step="vmcpt.valueStep"
+      ng-required="vmcpt.required"
+      name="input"
+      ng-change="vmcpt.updateModel()"
+    />
+    <div ng-messages="vmcpt.limitField.input.$error" role="alert" multiple>
+      <div ng-message="required">
+        <span translate="FIELD_REQUIRED"></span>
+      </div>
+      <div ng-message="min">
+        <span>{{'MIN_VALUE_IS' | translate:{value:vmcpt.minValue}}}</span>
+      </div>
+      <div ng-message="max">
+        <span>{{'MAX_VALUE_IS' | translate:{value:vmcpt.maxValue}}}</span>
+      </div>
+    </div>
+  </md-input-container>
+  <div translate="{{ vmcpt.hint }}"></div>
+</div>

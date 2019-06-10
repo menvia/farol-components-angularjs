@@ -1,0 +1,27 @@
+<div
+  ng-if="vmcpt.finishedLoading"
+  ng-hide="vmcpt.hidden"
+  ng-form="vmcpt.linkField"
+>
+  <h3 translate="{{ vmcpt.fieldName }}"></h3>
+  <md-content>
+    <div layout="row" layout-xs="column">
+      <div class="md-padding" style="padding-left: 8px !important" layout-align="center center" layout>
+        <a ng-if="vmcpt.model" target="_blank" ng-href="{{ vmcpt.model }}">{{
+          vmcpt.model
+        }}</a>
+        <p ng-if="!vmcpt.model">{{ 'NOLINK' | translate }}</p>
+      </div>
+      <div class="md-padding">
+        <md-button
+          ng-disabled="vmcpt.readonly"
+          class="md-raised"
+          ng-click="vmcpt.showEditDialog($event)"
+        >
+          {{ 'EDIT' | translate }}
+        </md-button>
+      </div>
+    </div>
+  </md-content>
+  <input type="text" ng-model="vmcpt.model" style="display: none" ng-required="vmcpt.required">
+</div>

@@ -1,0 +1,89 @@
+<div ng-switch="vmcpt.loaded" class="frl-data-tabber md-padding">
+  <div
+    ng-class="{wraparound: vmcpt.wrapAround}"
+    ng-form="vmcpt.dataTabberForm"
+    ng-switch-when="true"
+  >
+    <div>
+      <span class="md-title">
+        {{ vmcpt.fieldName || 'ITEMS' | translate }}
+      </span>
+      <span>
+        <md-tooltip md-direction="right">{{
+          'ADDITEM' | translate
+        }}</md-tooltip>
+        <md-button
+          type="button"
+          class="md-primary"
+          aria-label="Add"
+          ng-click="vmcpt.addItem()"
+          ng-disabled="vmcpt.maxReached()"
+        >
+          <md-icon md-svg-icon="baseline-add_box-24px.svg"></md-icon>
+        </md-button>
+      </span>
+    </div>
+    <div class="hint" ng-if="vmdr.hint" translate="{{ vmdr.hint }}"></div>
+    <md-tabs
+      ng-if="vmcpt.model.length > 0"
+      md-dynamic-height
+      md-border-bottom
+      md-autoselect
+      md-selected="vmcpt.selectedTabIndex"
+    >
+      <div
+        ng-repeat="childModel in vmcpt.model | orderBy: vmcpt.getChildOrder track by childModel._id"
+        ng-form="{{ 'vmcpt.form' + childModel._id }}"
+      >
+        <md-tab>
+          <md-tab-label>
+            <span>
+              {{ vmcpt.getChildName(childModel, $index) | limitTo: 20 }}
+            </span>
+            <span ng-if="vmcpt.getChildName(childModel, $index).length > 20"
+              >...</span
+            >
+            <span ng-show="vmcpt.selectedTabIndex === $index && !vmcpt.minReached()">
+              <md-tooltip md-direction="right">{{
+                'DELETE' | translate
+              }}</md-tooltip>
+              <md-button
+                type="button"
+                class="md-primary"
+                aria-label="Delete"
+                ng-click="vmcpt.deleteItem(childModel._id)"
+                ng-disabled="vmcpt.minReached()"
+              >
+                <md-icon md-svg-icon="baseline-delete-24px.svg"></md-icon>
+              </md-button>
+            </span>
+          </md-tab-label>
+          <md-tab-body>
+            <md-content class="md-padding">
+              <frl-field-router
+                frl-model="childModel"
+                frl-base-model="vmcpt.baseModel"
+                frl-model-path="{{
+                  vmcpt.modelPath.concat(
+                    vmcpt.modelPath ? '._id:' : '_id:',
+                    childModel._id
+                  )
+                }}"
+                frl-field-definitions="vmcpt.childrenDefinitions"
+              ></frl-field-router>
+            </md-content>
+          </md-tab-body>
+        </md-tab>
+      </div>
+    </md-tabs>
+    <div ng-if="vmcpt.model.length === 0">
+      {{ 'NOITEMS' | translate }}
+    </div>
+  </div>
+  <div ng-switch-when="undefined" class="loading-animation">
+    {{ 'LOADING' | translate }}
+  </div>
+  <div ng-switch-when="false" class="load-failled">
+    {{ 'LOADINGFAILLED' | translate }}
+  </div>
+</div>

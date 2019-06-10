@@ -3,9 +3,9 @@ const concat = require('gulp-concat');
 const fileInclude = require('gulp-file-include');
 const gulp = require('gulp');
 const ngAnnotate = require('gulp-ng-annotate');
-const path = require('gulp');
 const pump = require('pump');
 const uglifyEs = require('gulp-uglify-es');
+const sass = require('gulp-sass');
 
 const job = function(cb, debug) {
   const pumpSteps = [
@@ -45,5 +45,13 @@ const production = function(cb) {
   job(cb, false);
 };
 
-gulp.task('default', production);
+gulp.task('build', production);
 gulp.task('debug', debug);
+gulp.task('sass', function() {
+  return gulp
+      .src('./src/**/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(concat('angular-farol-components.css'))
+      .pipe(gulp.dest('./dist'));
+});
+gulp.task('default', gulp.parallel('build', 'sass'));

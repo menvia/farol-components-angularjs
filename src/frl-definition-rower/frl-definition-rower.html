@@ -1,0 +1,22 @@
+<div class="frl-definition-rower">
+  <div ng-if="vmcpt.loaded" ng-form="vmcpt.definitionRowerForm">
+    <h3 translate="{{ vmcpt.fieldName }}"></h3>
+    <div
+    ng-repeat="child in vmcpt.children | orderBy: vmcpt.getChildOrder track by child._id"
+      flex
+    >
+      <frl-field-router
+        frl-model="child.modelObject[child.modelAttribute]"
+        frl-base-model="vmcpt.baseModel"
+        frl-model-path="{{ child.modelPath }}"
+        frl-field-definitions="child.definitions"
+      ></frl-field-router>
+    </div>
+  </div>
+  <div ng-if="vmcpt.loaded === undefined" class="loading-animation">
+    {{ 'LOADING' | translate }}
+  </div>
+  <div ng-if="vmcpt.loaded === false" class="load-failled">
+    {{ 'LOADINGFAILLED' | translate }}
+  </div>
+</div>

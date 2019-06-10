@@ -1,0 +1,14 @@
+<div
+  id="frl-field-text"
+  ng-if="vmcpt.finishedLoading"
+  ng-hide="vmcpt.hidden"
+  ng-form="vmcpt.textField"
+>
+  <md-input-container ng-if="vmcpt.nonmaterialview" style="padding-bottom: 20px">
+    <div class="md-body-2">{{ vmcpt.fieldName | translate }}</div>
+    <div class="md-body-1">{{ vmcpt.text }}</div>
+  </md-input-container>
+  <md-input-container ng-if="!vmcpt.nonmaterialview">
+    <span class="md-body-2">{{ vmcpt.fieldName | translate }}:</span><span class="md-body-1"> {{ vmcpt.text }}</span>
+  </md-input-container>
+</div>

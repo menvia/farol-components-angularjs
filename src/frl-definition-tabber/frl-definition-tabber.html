@@ -1,0 +1,53 @@
+<div class="frl-definition-tabber md-padding">
+  <md-content>
+    <div ng-if="vmcpt.loaded" ng-form="vmcpt.definitionTabberForm">
+      <h3 ng-if="vmcpt.fieldName">{{ vmcpt.fieldName | translate }}</h3>
+      <md-tabs
+        ng-if="vmcpt.modelFilterField"
+        md-dynamic-height
+        md-border-bottom
+        md-autoselect
+      >
+        <md-tab
+          ng-repeat="child in vmcpt.children | orderBy: vmcpt.getChildOrder track by child._id"
+          label="{{ child.name | translate }}"
+        >
+          <md-content class="md-padding">
+            <frl-field-router
+              frl-model="vmcpt.childrenModel[child._id]"
+              frl-base-model="vmcpt.baseModel"
+              frl-model-path="{{child.modelPath}}"
+              frl-field-definitions="child.definitions"
+            ></frl-field-router>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+      <md-tabs
+        ng-if="!vmcpt.modelFilterField"
+        md-dynamic-height
+        md-border-bottom
+        md-autoselect
+      >
+        <md-tab
+          ng-repeat="child in vmcpt.children | orderBy: vmcpt.getChildOrder track by child._id"
+          label="{{ child.name | translate }}"
+        >
+          <md-content class="md-padding">
+            <frl-field-router
+              frl-model="vmcpt.model"
+              frl-base-model="vmcpt.baseModel"
+              frl-model-path="{{ vmcpt.modelPath }}"
+              frl-field-definitions="child.definitions"
+            ></frl-field-router>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </div>
+  </md-content>
+  <div ng-if="vmcpt.loaded === undefined" class="loading-animation">
+    {{ 'LOADING' | translate }}
+  </div>
+  <div ng-if="vmcpt.loaded === false" class="load-failled">
+    {{ 'LOADINGFAILLED' | translate }}
+  </div>
+</div>
