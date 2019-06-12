@@ -54,18 +54,12 @@ We use gulp in order to build the Farol SDK for JavaScript. There are two differ
 In order to release a new version you shall follow the steps bellow:
 
 1. Make the desired changes;
-2. If new files were added, update gulpfile.js file;
-3. Update CHANGELOG.md file;
-4. Commit your changes;
-5. Run the commands below:
+2. Update CHANGELOG.md file;
+3. Commit your changes;
+4. Run the commands below:
 
-- Run ```
-  npm version patch
-  FAROL_SDK_VERSION=$(npx -c 'echo "$npm_package_version"')
-  git commit -am"${FAROL_SDK_VERSION}"
-  git tag ${FAROL_SDK_VERSION}
-  git push && git push --tags
+- Run the following command choosing among major/minor/patch version in the {{SEMVER}} variable:
 
 ```
-
+npm version {{SEMVER}}
 ```
