@@ -1,20 +1,14 @@
-<frl-field-textarea
-  ng-switch-when="textarea"
-  frl-fieldname="{{
+<frl-field-textarea ng-switch-when="textarea" frl-fieldname="{{
     vmcpt.definitions.fieldname.modelObject[
       vmcpt.definitions.fieldname.modelAttribute
     ]
-  }}"
-  frl-model="vmcpt.model"
+  }}" frl-model="vmcpt.model"
   frl-readonly="vmcpt.definitions.readonly.modelObject[vmcpt.definitions.readonly.modelAttribute]"
-  frl-required="vmcpt.definitions.required.modelObject[vmcpt.definitions.required.modelAttribute]"
-  frl-hint="{{
+  frl-required="vmcpt.definitions.required.modelObject[vmcpt.definitions.required.modelAttribute]" frl-hint="{{
     vmcpt.definitions.hint.modelObject[vmcpt.definitions.hint.modelAttribute]
-  }}"
-  frl-hidden="vmcpt.definitions.hidden.modelObject[vmcpt.definitions.hidden.modelAttribute]"
+  }}" frl-hidden="vmcpt.definitions.hidden.modelObject[vmcpt.definitions.hidden.modelAttribute]"
   frl-minlength="vmcpt.definitions.minlength.modelObject[vmcpt.definitions.minlength.modelAttribute]"
-  frl-maxlength="vmcpt.definitions.maxlength.modelObject[vmcpt.definitions.maxlength.modelAttribute]"
-  frl-pattern="{{
+  frl-maxlength="vmcpt.definitions.maxlength.modelObject[vmcpt.definitions.maxlength.modelAttribute]" frl-pattern="{{
     vmcpt.definitions.pattern.modelObject[
       vmcpt.definitions.pattern.modelAttribute
     ]
@@ -25,6 +19,5 @@
     vmcpt.definitions.initialvalue.modelObject[
       vmcpt.definitions.initialvalue.modelAttribute
     ]
-  }}"
->
+  }}">
 </frl-field-textarea>
