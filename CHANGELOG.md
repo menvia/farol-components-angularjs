@@ -1,3 +1,9 @@
+## 1.0.5 / 2019.07.02
+
+#### Enhancement
+
+- Add disabled option to child on frl-definition-tabber
+
 ## 1.0.4 / 2019.04.01
 
 #### Enhancement

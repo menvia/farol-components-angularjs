@@ -11,6 +11,7 @@
         <md-tab
           ng-repeat="child in vmcpt.children | orderBy: vmcpt.getChildOrder track by child._id"
           label="{{ child.name | translate }}"
+          ng-if="child.disabled !== true"
         >
           <md-content class="md-padding">
             <frl-field-router
@@ -31,6 +32,7 @@
         <md-tab
           ng-repeat="child in vmcpt.children | orderBy: vmcpt.getChildOrder track by child._id"
           label="{{ child.name | translate }}"
+          ng-if="child.disabled !== true"
         >
           <md-content class="md-padding">
             <frl-field-router
