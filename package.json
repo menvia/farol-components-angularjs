@@ -9,7 +9,7 @@
   "scripts": {
     "version": "upver && gulp && git add -A",
     "postversion": "npm publish --access public",
-    "postpublish": "FAROL_SDK_VERSION=$(npx -c 'echo \"$npm_package_version\"') && git commit -am\"${FAROL_SDK_VERSION}\" && git tag ${FAROL_SDK_VERSION} && git push && git push --tags",
+    "postpublish": "cross-env FAROL_SDK_VERSION=$(npx -c 'echo \"$npm_package_version\"') && git commit -am\"${FAROL_SDK_VERSION}\" && git tag ${FAROL_SDK_VERSION} && git push && git push --tags",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "config": {
@@ -36,6 +36,7 @@
     "@babel/plugin-transform-strict-mode": "^7.2.0",
     "@babel/preset-env": "^7.5.0",
     "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
     "eslint": "^6.0.1",
     "eslint-config-google": "^0.13.0",
     "eslint-watch": "^5.1.2",
