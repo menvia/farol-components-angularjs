@@ -9,8 +9,8 @@
   "scripts": {
     "version": "upver && gulp && git add -A",
     "postversion": "npm publish --access public",
-    "lalala2": "git commit -am\"${FAROL_SDK_VERSION}\" && git tag ${FAROL_SDK_VERSION} && git push && git push --tags",
-    "postpublish": "cross-env FAROL_SDK_VERSION=$(npx -c 'echo \"$npm_package_version\"') npm run lalala2",
+    "postpublish2": "git commit -am\"${FAROL_SDK_VERSION}\" && git tag ${FAROL_SDK_VERSION} && git push && git push --tags",
+    "postpublish": "cross-env FAROL_SDK_VERSION=$(npx -c 'echo \"$npm_package_version\"') npm run postpublish2",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "config": {
