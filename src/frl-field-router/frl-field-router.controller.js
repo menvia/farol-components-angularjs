@@ -22,7 +22,7 @@
       GetItemsFromServerService,
       UserManagerService,
   ) {
-    // variables
+    // variables section
     const vmcpt = this;
     // Methods
     // init
