@@ -1,6 +1,6 @@
 {
   "name": "angular-farol-components",
-  "version": "1.1.25",
+  "version": "1.1.26",
   "description": "Farol Components for AngularJS",
   "main": [
     "dist/angular-farol-components.js",
@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "version": "upver && gulp && git add -A",
-    "postversion": "npm publish --access public",
+    "postversion-lalal": "npm publish --access public",
     "postpublish": "FAROL_SDK_VERSION=$(npx -c 'echo \"$npm_package_version\"') && echo $FAROL_SDK_VERSION",
     "postpublish3": "git tag ${FAROL_SDK_VERSION} && npm run postpublish4",
     "postpublish4": "git push && git push --tags",

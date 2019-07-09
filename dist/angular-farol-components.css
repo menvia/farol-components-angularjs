@@ -1,3 +1,27 @@
+.frl-data-rower .loading {
+  font-size: 30px; }
+
+.frl-data-rower .loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 900ms infinite;
+  animation: ellipsis steps(4, end) 900ms infinite;
+  content: "\2026";
+  /* ascii code for the ellipsis character */
+  width: 0px; }
+
+@keyframes ellipsis {
+  to {
+    width: 1.25em; } }
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em; } }
+
+.frl-data-rower .load-failled {
+  color: red; }
+
 .frl-data-tabber .wraparound {
   border: 2px solid lightgray;
   padding: 16px; }
@@ -26,10 +50,10 @@
 .frl-data-tabber .load-failled {
   color: red; }
 
-.frl-data-rower .loading {
+.frl-definition-rower .loading {
   font-size: 30px; }
 
-.frl-data-rower .loading:after {
+.frl-definition-rower .loading:after {
   overflow: hidden;
   display: inline-block;
   vertical-align: bottom;
@@ -47,7 +71,7 @@
   to {
     width: 1.25em; } }
 
-.frl-data-rower .load-failled {
+.frl-definition-rower .load-failled {
   color: red; }
 
 .frl-definition-tabber .loading {
@@ -72,30 +96,6 @@
     width: 1.25em; } }
 
 .frl-definition-tabber .load-failled {
-  color: red; }
-
-.frl-definition-rower .loading {
-  font-size: 30px; }
-
-.frl-definition-rower .loading:after {
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: bottom;
-  -webkit-animation: ellipsis steps(4, end) 900ms infinite;
-  animation: ellipsis steps(4, end) 900ms infinite;
-  content: "\2026";
-  /* ascii code for the ellipsis character */
-  width: 0px; }
-
-@keyframes ellipsis {
-  to {
-    width: 1.25em; } }
-
-@-webkit-keyframes ellipsis {
-  to {
-    width: 1.25em; } }
-
-.frl-definition-rower .load-failled {
   color: red; }
 
 .frl-field-router .loading {
