@@ -9,7 +9,7 @@
   "scripts": {
     "version": "upver && gulp && git add -A",
     "postversion": "npm publish --access public",
-    "postpublish": "FAROL_SDK_VERSION=$(npx -c 'echo \"$npm_package_version\"') && echo $FAROL_SDK_VERSION && git commit -am\"${FAROL_SDK_VERSION}\"  && npm run postpublish3",
+    "postpublish": "FAROL_SDK_VERSION=$(npx -c 'echo \"$npm_package_version\"') && echo $FAROL_SDK_VERSION",
     "postpublish3": "git tag ${FAROL_SDK_VERSION} && npm run postpublish4",
     "postpublish4": "git push && git push --tags",
     "test": "echo \"Error: no test specified\" && exit 1"
