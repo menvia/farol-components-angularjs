@@ -1,3 +1,9 @@
+## 1.2.0 / 2019.09.10
+
+#### Enhancement
+
+- Major dependencies update
+
 ## 1.0.5 / 2019.07.02
 
 #### Enhancement
