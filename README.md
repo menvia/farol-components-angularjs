@@ -7,7 +7,7 @@
 - To install or update run
 
 ```
-bower install angular-farol-components#1.1.32 -S -F
+bower install angular-farol-components#1.2.0 -S -F
 ```
 
 ### Using NPM
