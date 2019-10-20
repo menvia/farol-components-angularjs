@@ -1,18 +1,19 @@
 <div ng-hide="vmcpt.hidden" class="frl-field-select">
   <div ng-form="selectField" ng-if="vmcpt.finishedLoading">
-    <md-input-container class="md-block" flex 
-    ng-if="!vmcpt.multiple">
+    <md-input-container class="md-block" flex ng-if="!vmcpt.multiple">
       <h3 ng-if="vmcpt.nonMaterialView" translate="{{ vmcpt.fieldName }}"></h3>
       <label
         ng-if="!vmcpt.nonMaterialView"
         translate="{{ vmcpt.fieldName }}"
       ></label>
+      <div layout="row">
         <md-select
           ng-model="vmcpt.model"
           ng-disabled="vmcpt.readonly"
           ng-required="vmcpt.required"
           name="input"
           aria-label="{{ vmcpt.fieldName | translate }}"
+          flex
         >
           <md-option
             ng-repeat="item in vmcpt.list"
@@ -20,6 +21,16 @@
             >{{ item.name.object[item.name.field] | translate }}</md-option
           >
         </md-select>
+        <md-button
+          type="button"
+          class="md-fab md-mini"
+          ng-if="!vmcpt.required"
+          ng-click="vmcpt.model = null"
+        >
+          <md-tooltip md-direction="top">{{ 'CLEAR' | translate }}</md-tooltip>
+          <md-icon md-font-icon="icon-broom"></md-icon>
+        </md-button>
+      </div>
       <div
         class="hint"
         ng-if="(vmcpt.selectField.input.$valid || vmcpt.selectField.input.$pristine) && vmcpt.hint"
@@ -31,38 +42,37 @@
         </div>
       </div>
     </md-input-container>
-    <md-input-container class="md-block" flex 
-    ng-if="vmcpt.multiple">
-        <h3 ng-if="vmcpt.nonMaterialView" translate="{{ vmcpt.fieldName }}"></h3>
-        <label
-          ng-if="!vmcpt.nonMaterialView"
-          translate="{{ vmcpt.fieldName }}"
-        ></label>
-          <md-select
-            ng-model="vmcpt.model"
-            ng-disabled="vmcpt.readonly"
-            ng-required="vmcpt.required"
-            name="input"
-            aria-label="{{ vmcpt.fieldName | translate }}"
-            multiple
-          >
-            <md-option
-              ng-repeat="item in vmcpt.list"
-              ng-value="item._id.object[item._id.field]"
-              >{{ item.name.object[item.name.field] | translate }}</md-option
-            >
-          </md-select>
-        <div
-          class="hint"
-          ng-if="(vmcpt.selectField.input.$valid || vmcpt.selectField.input.$pristine) && vmcpt.hint"
-          translate="{{ vmcpt.hint }}"
-        ></div>
-        <div ng-messages="vmcpt.selectField.input.$error" role="alert" multiple>
-          <div ng-message="required">
-            <span translate="FIELD_REQUIRED"></span>
-          </div>
+    <md-input-container class="md-block" flex ng-if="vmcpt.multiple">
+      <h3 ng-if="vmcpt.nonMaterialView" translate="{{ vmcpt.fieldName }}"></h3>
+      <label
+        ng-if="!vmcpt.nonMaterialView"
+        translate="{{ vmcpt.fieldName }}"
+      ></label>
+      <md-select
+        ng-model="vmcpt.model"
+        ng-disabled="vmcpt.readonly"
+        ng-required="vmcpt.required"
+        name="input"
+        aria-label="{{ vmcpt.fieldName | translate }}"
+        multiple
+      >
+        <md-option
+          ng-repeat="item in vmcpt.list"
+          ng-value="item._id.object[item._id.field]"
+          >{{ item.name.object[item.name.field] | translate }}</md-option
+        >
+      </md-select>
+      <div
+        class="hint"
+        ng-if="(vmcpt.selectField.input.$valid || vmcpt.selectField.input.$pristine) && vmcpt.hint"
+        translate="{{ vmcpt.hint }}"
+      ></div>
+      <div ng-messages="vmcpt.selectField.input.$error" role="alert" multiple>
+        <div ng-message="required">
+          <span translate="FIELD_REQUIRED"></span>
         </div>
-      </md-input-container>
+      </div>
+    </md-input-container>
   </div>
   <div ng-if="vmcpt.finishedLoading === undefined" class="loading-animation">
     {{ 'LOADING' | translate }}
