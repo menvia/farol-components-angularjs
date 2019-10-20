@@ -1,0 +1,14 @@
+<div
+  id="frl-field-action"
+  ng-if="vmcpt.finishedLoading"
+  ng-form="vmcpt.actionField"
+>
+  <md-input-container class="md-block" flex>
+    <div class="md-padding" layout="row" layout-align="start end">
+      <md-button class="md-raised" ng-click="vmcpt.action($event)">
+        {{ vmcpt.fieldName | translate }}
+      </md-button>
+      <div>{{ vmcpt.text | translate }}</div>
+    </div>
+  </md-input-container>
+</div>
