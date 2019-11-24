@@ -1,3 +1,9 @@
+## 1.2.1 / 2019.11.24
+
+#### Fix
+
+- Fixed min and max length to not interpret "" as 0
+
 ## 1.2.0 / 2019.09.10
 
 #### Enhancement

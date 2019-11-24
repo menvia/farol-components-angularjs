@@ -26,7 +26,7 @@
       const loadingId = LoadingSplashService.showLoading(true);
       vmcpt.model = vmcpt.model || [];
       if (Array.isArray(vmcpt.model)) {
-        vmcpt.model.forEach(item => {
+        vmcpt.model.forEach((item) => {
           parseNewItem(item);
         });
         vmcpt.loaded = true;
@@ -64,16 +64,24 @@
     vmcpt.getChildName = (childModel, index) =>
       vmcpt.itemNameField
         ? ObjectQueryService.getProperty(vmcpt.itemNameField, childModel) ||
-          $translate.instant('NONAME')
+        $translate.instant('NONAME')
         : $translate.instant('ITEM') + ' ' + index;
 
     vmcpt.minReached = () => {
-      return vmcpt.minLength >= vmcpt.model.length;
-    }
+      let result = false;
+      if ( vmcpt.minLength || vmcpt.minLength === 0) {
+        result = vmcpt.minLength >= vmcpt.model.length;
+      }
+      return result;
+    };
 
     vmcpt.maxReached = () => {
-      return vmcpt.model.length >= vmcpt.maxLength;
-    }
+      let result = false;
+      if ( vmcpt.maxLength || vmcpt.maxLength === 0) {
+        result = vmcpt.model.length >= vmcpt.maxLength;
+      }
+      return result;
+    };
 
     const parseNewItem = (item) => {
       item._id = item._id || ObjectIdService.getString();
