@@ -1,4 +1,10 @@
-## 1.2.1 / 2019.11.24
+## 1.2.4 / 2019.11.24
+
+#### Enhancement
+
+- Add disabled definition interpretation to frl-field-router
+
+## 1.2.3 / 2019.11.24
 
 #### Fix
 
